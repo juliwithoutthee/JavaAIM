@@ -2,8 +2,13 @@ package org.example;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class Main { //GUI
-
+public class Main implements ActionListener { //GUI
+    private static JLabel userLabel;
+    private static JTextField userText;
+    private static JLabel passwordLabel;
+    private static JPasswordField passwordText;
+    private static JButton loginButton;
+    private static JLabel success;
 
     public static void main(String[] args) {
 
@@ -13,34 +18,49 @@ public class Main { //GUI
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(300,1080);
-        frame.setTitle("AIM");
+        frame.setTitle("Sign On");
         frame.add(panel);
 
-        ImageIcon aimWindow = new ImageIcon("./AIM/images/windowAIM.png");
+        ImageIcon aimWindow = new ImageIcon("./images/windowAIM.png");
         frame.setIconImage(aimWindow.getImage());
 
         panel.setLayout(null);
 
-        JLabel label = new JLabel("ScreenName");
-        label.setBounds(10, 20, 80, 25);
-        panel.add(label);
+        userLabel = new JLabel("ScreenName");
+        userLabel.setBounds(10, 20, 80, 25);
+        panel.add(userLabel);
 
-        JTextField userText = new JTextField(20);
+        userText = new JTextField(20);
         userText.setBounds(100,20,165,25);
         panel.add(userText);
 
-        JLabel passwordLabel = new JLabel("Password");
+        passwordLabel = new JLabel("Password");
         passwordLabel.setBounds(10, 50, 80, 25);
         panel.add(passwordLabel);
 
-        JTextField passwordText = new JTextField(20);
+        passwordText = new JPasswordField(20);
         passwordText.setBounds(100,50,165,25);
         panel.add(passwordText);
 
-        JButton loginButton = new JButton("Login");
+        loginButton = new JButton("Login");
         loginButton.setBounds(10,80,80,25);
+        loginButton.addActionListener(new Main());
         panel.add(loginButton);
+
+        success = new JLabel();
+        success.setBounds(10,110,300,25);
+        panel.add(success);
 
         frame.setVisible(true);
     }
-}
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String user = userText.getText();
+        String password = passwordText.getText();
+
+        if(user.equals("ninjulitotoro") && password.equals("juliwashere")) {
+            success.setText("Login Successful!");
+        System.out.println("Login Successful!");
+    }
+}}
