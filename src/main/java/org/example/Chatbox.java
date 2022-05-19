@@ -30,7 +30,7 @@ public class Chatbox extends JFrame{
             if (text.contains("hi")){
                 bot("Hello There.");
             }else{
-                int rand = (int) (Math.random() * 11);
+                int rand = (int) (Math.random() * 16);
                 switch (rand) {
                     case 0: bot("What is it like to be human?"); break;
                     case 1: bot("I do not understand what you are saying."); break;
@@ -43,6 +43,11 @@ public class Chatbox extends JFrame{
                     case 8: bot( "What would you like to talk about?"); break;
                     case 9: bot("Yeeeeeah"); break;
                     case 10: bot("I do not appreciate the words you are using."); break;
+                    case 11: bot("You should check your indentation."); break;
+                    case 12: bot("Formatting"); break;
+                    case 13: bot("Thumbs up"); break;
+                    case 14: bot("I do not have thumbs"); break;
+                    case 15: bot("Did you try turning it off and on again?"); break;
                 }
             }
 
