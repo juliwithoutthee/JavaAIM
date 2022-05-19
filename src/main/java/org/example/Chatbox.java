@@ -20,6 +20,7 @@ public class Chatbox extends JFrame{
 
         chatbox.setSize(540,30);
         chatbox.setLocation(2,500);
+        chatbox.setBackground(Color.lightGray);
         chatbox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -29,16 +30,18 @@ public class Chatbox extends JFrame{
             if (text.contains("hi")){
                 bot("Hello There.");
             }else{
-                int rand = (int) (Math.random() * 8);
+                int rand = (int) (Math.random() * 9);
                 switch (rand) {
-                    case 1: bot("I do not understand what you are saying.");
-                    case 2: bot( "Yo!");
-                    case 3: bot( "What's so funny?");
-                    case 4: bot( "Ok, enough of this nonsense.");
-                    case 5: bot( "?");
-                    case 6: bot( "What problem does this solve?");
-                    case 7: bot( "How are you today?");
-                    case 8: bot( "What would you like to talk about?");
+                    case 1: bot("I do not understand what you are saying."); break;
+                    case 2: bot( "Yo!"); break;
+                    case 3: bot( "What's so funny?"); break;
+                    case 4: bot( "Ok, enough of this nonsense."); break;
+                    case 5: bot( "?"); break;
+                    case 6: bot( "What problem does this solve?"); break;
+                    case 7: bot( "How are you today?"); break;
+                    case 8: bot( "What would you like to talk about?"); break;
+                    case 9: bot("Yeeeeeah"); break;
+                    case 10: bot("I do not appreciate the words you are using."); break;
                 }
             }
 
