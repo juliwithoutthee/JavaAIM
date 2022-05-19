@@ -3,9 +3,11 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 public class Chatbox extends JFrame{
+    private JScrollPane chatScrollable = new JScrollPane();
     private JTextArea chatArea = new JTextArea();
     private JTextField chatbox = new JTextField();
     public Chatbox(){
+
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         frame.setTitle("AIM Chat");
@@ -14,6 +16,7 @@ public class Chatbox extends JFrame{
         frame.setSize(600,600);
         frame.add(chatbox);
         frame.add(chatArea);
+        //frame.add(chatScrollable);
 
         chatArea.setSize(500,400);
         chatArea.setLocation(2,2);
@@ -25,7 +28,7 @@ public class Chatbox extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
             String text = chatbox.getText();
-            chatArea.append( "ninjulitotoro: " + text+ "\n");
+            chatArea.append( "  ninjulitotoro: " + text+ "\n");
             chatbox.setText("");
             if (text.contains("hi")){
                 bot("Hello There.");
@@ -55,7 +58,7 @@ public class Chatbox extends JFrame{
         });
     }
     private void bot (String string) {
-        chatArea.append("SmartererChild: " + string + "\n");
+        chatArea.append("  SmartererChild: " + string + "\n");
     }
     public static void main (String[] args){
         new Chatbox();
