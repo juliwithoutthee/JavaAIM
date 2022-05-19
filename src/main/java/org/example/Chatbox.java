@@ -30,8 +30,9 @@ public class Chatbox extends JFrame{
             if (text.contains("hi")){
                 bot("Hello There.");
             }else{
-                int rand = (int) (Math.random() * 9);
+                int rand = (int) (Math.random() * 11);
                 switch (rand) {
+                    case 0: bot("What is it like to be human?"); break;
                     case 1: bot("I do not understand what you are saying."); break;
                     case 2: bot( "Yo!"); break;
                     case 3: bot( "What's so funny?"); break;
@@ -49,7 +50,7 @@ public class Chatbox extends JFrame{
         });
     }
     private void bot (String string) {
-        chatArea.append("SmartererChild:" + string + "\n");
+        chatArea.append("SmartererChild: " + string + "\n");
     }
     public static void main (String[] args){
         new Chatbox();
