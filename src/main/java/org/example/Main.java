@@ -1,4 +1,5 @@
 package org.example;
+import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
@@ -10,7 +11,7 @@ public class Main implements ActionListener { //GUI
     private static JButton loginButton;
     private static JLabel success;
 
-    public static void main(String[] args) {
+    public static void main (String[] args) {
 
         JPanel panel = new JPanel();
         JFrame frame = new JFrame();
@@ -20,7 +21,7 @@ public class Main implements ActionListener { //GUI
         frame.setSize(300,1080);
         frame.setTitle("Sign On");
         frame.add(panel);
-
+        frame.setBackground(Color.blue);
         ImageIcon aimWindow = new ImageIcon("./images/windowAIM.png");
         frame.setIconImage(aimWindow.getImage());
 
